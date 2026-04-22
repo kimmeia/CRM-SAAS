@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM SaaS - Smartflow & Kanban</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>CRM SaaS</h1>
+      <p>Smartflow, Kanban e Configurações</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Smartflow</h2>
+        <form id="pipeline-form" class="form-grid">
+          <input id="pipeline-name" placeholder="Nome do funil" required />
+          <input id="pipeline-stages" placeholder="Estágios (separados por vírgula)" required />
+          <button type="submit">Criar Pipeline</button>
+        </form>
+
+        <form id="lead-form" class="form-grid">
+          <input id="lead-title" placeholder="Título do lead" required />
+          <select id="lead-pipeline" required></select>
+          <button type="submit">Criar Lead</button>
+        </form>
+
+        <div id="leads-list" class="list"></div>
+      </section>
+
+      <section class="card">
+        <h2>Kanban</h2>
+        <form id="card-form" class="form-grid">
+          <input id="card-title" placeholder="Título do card" required />
+          <select id="card-status">
+            <option value="todo">To Do</option>
+            <option value="doing">Doing</option>
+            <option value="done">Done</option>
+          </select>
+          <button type="submit">Criar Card</button>
+        </form>
+
+        <div class="kanban-grid">
+          <div>
+            <h3>To Do</h3>
+            <div id="kanban-todo" class="list"></div>
+          </div>
+          <div>
+            <h3>Doing</h3>
+            <div id="kanban-doing" class="list"></div>
+          </div>
+          <div>
+            <h3>Done</h3>
+            <div id="kanban-done" class="list"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Configurações</h2>
+        <form id="settings-form" class="form-grid">
+          <input id="company-name" placeholder="Nome da empresa" required />
+          <input id="locale" placeholder="Idioma (ex: pt-BR)" required />
+          <input id="timezone" placeholder="Timezone (ex: America/Sao_Paulo)" required />
+          <button type="submit">Salvar Configurações</button>
+        </form>
+        <div id="settings-feedback"></div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
